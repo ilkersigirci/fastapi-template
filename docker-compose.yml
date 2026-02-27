@@ -36,8 +36,6 @@ services:
       - no-new-privileges:true
     tty: true
     command: ["python", "-m", "app.__main__"]
-    volumes:
-      - .logfire:/app/.logfire
     env_file:
       - .env
     environment:
@@ -68,8 +66,6 @@ services:
       - no-new-privileges:true
     tty: true
     command: ["python", "-m", "worker.main"]
-    volumes:
-      - ./api-workers-general/.logfire:/app/.logfire
     env_file:
       - .env
     environment:
@@ -101,8 +97,6 @@ services:
     <<: *gpu-deploy
     tty: true
     command: ["python", "-m", "worker.main"]
-    volumes:
-      - ./api-workers-ml/.logfire:/app/.logfire
     env_file:
       - .env
     environment:
