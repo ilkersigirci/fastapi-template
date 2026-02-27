@@ -17,7 +17,7 @@ from hatchet_sdk.clients.rest.models.v1_workflow_run_details import (
 )
 
 from app.api.tasks.deps import get_runner
-from app.external.runner import ExternalRunner
+from app.core.hatchet import ExternalRunner
 
 router = APIRouter(prefix="/tasks/ml", tags=["ml-tasks"])
 

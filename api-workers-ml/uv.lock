@@ -159,7 +159,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "hatchet-sdk", extras = ["otel"], specifier = ">=1.24" },
+    { name = "hatchet-sdk", extras = ["otel"], specifier = ">=1.27" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "langfuse", marker = "extra == 'langfuse'", specifier = ">=3.2.4" },
     { name = "logfire", extras = ["httpx", "system-metrics"], marker = "extra == 'logfire'", specifier = ">=3.12.0" },
@@ -702,7 +702,7 @@ wheels = [
 
 [[package]]
 name = "hatchet-sdk"
-version = "1.25.0"
+version = "1.27.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
@@ -714,11 +714,12 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "python-dateutil" },
     { name = "tenacity" },
+    { name = "typing-inspection" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cd/cf/d39715f54ef65eab113b373a214c8d8894c21b063f1740436476efe3353d/hatchet_sdk-1.25.0.tar.gz", hash = "sha256:0718e67fdedabde80f50404bb395165eb1b178825a94eb4b1752843eae359e1f", size = 252724, upload-time = "2026-02-17T15:26:26.915Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5b/02/e8bcc42654f03af3a39f9319d21fc42ab36abca9514cee275c04b2810186/hatchet_sdk-1.27.0.tar.gz", hash = "sha256:c312a83c8e6c13040cc2512a6ed7e60085af2496587a2dbd5c18a62d84217cb8", size = 246838, upload-time = "2026-02-27T18:21:40.236Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/46/09ca0b6a04ad5cded0ef34413e7b0ea49d9f0c3c5a97c2f7a9c27b9847d2/hatchet_sdk-1.25.0-py3-none-any.whl", hash = "sha256:d89ec0183e6593b1f6665fd06c621192d04fceaceaf296f99408be695034954f", size = 581116, upload-time = "2026-02-17T15:26:25.523Z" },
+    { url = "https://files.pythonhosted.org/packages/ef/5b/3c2a8b6908a68d42489d903c41fa460cd6d61e07a27252737fcec8d97b31/hatchet_sdk-1.27.0-py3-none-any.whl", hash = "sha256:3cea10e68d3551881588ec941b50f0e383855b191eb79905ee57ee806b08430b", size = 574642, upload-time = "2026-02-27T18:21:37.611Z" },
 ]
 
 [package.optional-dependencies]

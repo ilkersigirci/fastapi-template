@@ -1,5 +1,5 @@
-from app.external.runner import ExternalRunner, get_external_runner
+from app.core.hatchet import ExternalRunner
 
 
 def get_runner() -> ExternalRunner:
-    return get_external_runner()
+    return ExternalRunner()

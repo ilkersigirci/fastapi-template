@@ -5,7 +5,7 @@ description = "Shared dependencies for both api and the worker services."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "hatchet-sdk[otel]>=1.24",
+    "hatchet-sdk[otel]>=1.27",
     "httpx>=0.28.1",
     "loguru>=0.7.3",
     "opentelemetry-distro[otlp]>=0.52b0",
