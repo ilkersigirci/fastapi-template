@@ -41,8 +41,6 @@ services:
     environment:
       - PORT=8000
       - RELOAD=False
-      - OLTP_LOG_METHOD=logfire
-      - HATCHET_CLIENT_TOKEN=${HATCHET_CLIENT_TOKEN}
     # For self-hosted Hatchet, use:
     # depends_on:
     #   hatchet-lite:
@@ -69,10 +67,8 @@ services:
     env_file:
       - .env
     environment:
-      - OLTP_LOG_METHOD=logfire
       - HATCHET_WORKER_NAME=general-worker
       - HATCHET_WORKER_SLOTS=${WORKER_COUNT:-5}
-      - HATCHET_CLIENT_TOKEN=${HATCHET_CLIENT_TOKEN}
     # For self-hosted Hatchet, use:
     # depends_on:
     #   hatchet-lite:
@@ -100,10 +96,8 @@ services:
     env_file:
       - .env
     environment:
-      - OLTP_LOG_METHOD=logfire
       - HATCHET_WORKER_NAME=ml-worker
       - HATCHET_WORKER_SLOTS=${ML_WORKER_COUNT:-3}
-      - HATCHET_CLIENT_TOKEN=${HATCHET_CLIENT_TOKEN}
     # For self-hosted Hatchet, use:
     # depends_on:
     #   hatchet-lite:
