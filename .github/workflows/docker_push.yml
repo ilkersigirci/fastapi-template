@@ -18,13 +18,13 @@ jobs:
     strategy:
       matrix:
         include:
-          - image_name: api-template-app
+          - image_name: fastapi-template-api
             dockerfile: ./docker/Dockerfile
             context: .
-          - image_name: api-workers-general
+          - image_name: fastapi-template-api-workers-general
             dockerfile: ./api-workers-general/Dockerfile
             context: ./api-workers-general
-          - image_name: api-workers-ml
+          - image_name: fastapi-template-api-workers-ml
             dockerfile: ./api-workers-ml/Dockerfile
             context: ./api-workers-ml
 

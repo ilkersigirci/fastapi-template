@@ -1,8 +1,8 @@
-name: api-template
+name: fastapi-template
 
 networks:
-  api-template-network:
-    name: api-template-network
+  fastapi-template-network:
+    name: fastapi-template-network
     driver: bridge
     ipam:
       config:
@@ -16,7 +16,7 @@ services:
     image: otel/opentelemetry-collector-contrib:0.53.0
     container_name: otel-collector
     networks:
-      - api-template-network
+      - fastapi-template-network
     ports:
       - "4317:4317"
     volumes:
@@ -27,7 +27,7 @@ services:
     image: jaegertracing/all-in-one:1.35
     hostname: jaeger
     networks:
-      - api-template-network
+      - fastapi-template-network
     ports:
       - 16686:16686
 
@@ -36,7 +36,7 @@ services:
     image: docker.io/grafana/otel-lgtm:latest
     container_name: grafana-lgtm
     networks:
-      - api-template-network
+      - fastapi-template-network
     ports:
       - 3000:3000 # Grafana
       - 4317:4317 # gRPC

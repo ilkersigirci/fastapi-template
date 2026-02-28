@@ -19,8 +19,13 @@ x-deploy: &gpu-deploy
 
 services:
   fastapi-template-api:
-    image: ghcr.io/ilkersigirci/fastapi-template-api:latest
+    image: fastapi-template-api:latest
     container_name: fastapi-template-api
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      # target: development
+      target: production
     networks:
       - fastapi-template-network
     ports:
@@ -41,10 +46,17 @@ services:
     #     condition: service_started
 
   fastapi-template-api-workers-general:
-    image: ghcr.io/ilkersigirci/fastapi-template-api-workers-general:latest
+    image: fastapi-template-api-workers-general:latest
     container_name: fastapi-template-api-workers-general
+    build:
+        context: api-workers-general
+        dockerfile: Dockerfile
+        # target: development
+        target: production
+        additional_contexts:
+          api-shared: api-shared
     networks:
-      - fastapi-template-network
+        - fastapi-template-network
     restart: "no"
     security_opt:
       - no-new-privileges:true
@@ -61,10 +73,17 @@ services:
     #     condition: service_started
 
   fastapi-template-api-workers-ml:
-    image: ghcr.io/ilkersigirci/fastapi-template-api-workers-ml:latest
+    image: fastapi-template-api-workers-ml:latest
     container_name: fastapi-template-api-workers-ml
+    build:
+        context: api-workers-ml
+        dockerfile: Dockerfile
+        # target: development
+        target: production
+        additional_contexts:
+          api-shared: api-shared
     networks:
-      - fastapi-template-network
+        - fastapi-template-network
     restart: "no"
     security_opt:
       - no-new-privileges:true

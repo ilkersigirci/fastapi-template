@@ -2,7 +2,7 @@
 # chain commands together with semicolon
 .ONESHELL:
 SHELL=/bin/bash
-ROOT_DIR=api-template
+ROOT_DIR=fastapi-template
 PACKAGE=app
 DOC_DIR=./docs
 TEST_DIR=./tests
@@ -10,7 +10,7 @@ TEST_MARKER=placeholder
 TEST_OUTPUT_DIR=tests_outputs
 PRECOMMIT_FILE_PATHS=./app/__init__.py
 PROFILE_FILE_PATH=./app/__init__.py
-DOCKER_IMAGE=api-template
+DOCKER_IMAGE=fastapi-template
 DOCKER_TARGET=development
 
 
@@ -161,7 +161,7 @@ reset-all-migrations: ## Reset all migrations
 	uv run --module alembic downgrade base
 
 run-docker-services: # Run required docker services
-	docker compose up -d api-template-app api-workers-general api-workers-ml
+	docker compose up -d fastapi-template-app api-workers-general api-workers-ml
 
 ##### EXTERNAL MAKEFILE CALLS #####
 
