@@ -36,15 +36,11 @@ services:
       - no-new-privileges:true
     tty: true
     command: ["python", "-m", "app.__main__"]
-    volumes:
-      - .logfire:/app/.logfire
     env_file:
       - .env
     environment:
       - PORT=8000
       - RELOAD=False
-      - OLTP_LOG_METHOD=logfire
-      - HATCHET_CLIENT_TOKEN=${HATCHET_CLIENT_TOKEN}
     # For self-hosted Hatchet, use:
     # depends_on:
     #   hatchet-lite:
@@ -68,15 +64,11 @@ services:
       - no-new-privileges:true
     tty: true
     command: ["python", "-m", "worker.main"]
-    volumes:
-      - ./api-workers-general/.logfire:/app/.logfire
     env_file:
       - .env
     environment:
-      - OLTP_LOG_METHOD=logfire
       - HATCHET_WORKER_NAME=general-worker
       - HATCHET_WORKER_SLOTS=${WORKER_COUNT:-5}
-      - HATCHET_CLIENT_TOKEN=${HATCHET_CLIENT_TOKEN}
     # For self-hosted Hatchet, use:
     # depends_on:
     #   hatchet-lite:
@@ -101,15 +93,11 @@ services:
     <<: *gpu-deploy
     tty: true
     command: ["python", "-m", "worker.main"]
-    volumes:
-      - ./api-workers-ml/.logfire:/app/.logfire
     env_file:
       - .env
     environment:
-      - OLTP_LOG_METHOD=logfire
       - HATCHET_WORKER_NAME=ml-worker
       - HATCHET_WORKER_SLOTS=${ML_WORKER_COUNT:-3}
-      - HATCHET_CLIENT_TOKEN=${HATCHET_CLIENT_TOKEN}
     # For self-hosted Hatchet, use:
     # depends_on:
     #   hatchet-lite:

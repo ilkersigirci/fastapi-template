@@ -2,30 +2,6 @@
 
 FastAPI Template with Industry Standard Observability
 
-## Logfire
-
-- [Logfire](https://github.com/pydantic/logfire) is Uncomplicated Observability for Python by Pydantic Team.
-- Create a new project in [Logfire](https://logfire-us.pydantic.dev) with name `api-template`
-
-```bash
-logfire auth
-logfire projects use api-template
-```
-
-Set in `.env`: `OLTP_LOG_METHOD=logfire`
-
-## Langfuse
-
-Set in `.env`: `OLTP_LOG_METHOD=langfuse`
-
-Also set the following in `.env`:
-
-```bash
-LANGFUSE_BASE_URL=FILL_IT
-LANGFUSE_PUBLIC_KEY=FILL_IT
-LANGFUSE_SECRET_KEY=FILL_IT
-```
-
 ## Hatchet
 
 Background workflows are powered by [Hatchet](https://hatchet.run).
@@ -41,6 +17,33 @@ cd api-workers-general && make run-worker
 
 # ML worker
 cd api-workers-ml && make run-worker
+```
+
+## OpenTelemetry
+
+You can choose where to send OpenTelemetry traces. You can use any OpenTelemetry compatible backend, but the template has built-in support for `Logfire` and `Langfuse`.
+
+### Logfire
+
+- [Logfire](https://github.com/pydantic/logfire) is Uncomplicated Observability for Python by Pydantic Team.
+- Create a new project in [Logfire](https://logfire-us.pydantic.dev) with name `fastapi-template`
+
+Set in `.env`
+
+```bash
+OLTP_LOG_METHOD=logfire
+LOGFIRE_TOKEN=FILL_IT
+```
+
+### Langfuse
+
+Set in `.env`:
+
+```bash
+OLTP_LOG_METHOD=langfuse
+LANGFUSE_BASE_URL=FILL_IT
+LANGFUSE_PUBLIC_KEY=FILL_IT
+LANGFUSE_SECRET_KEY=FILL_IT
 ```
 
 ## Migrations

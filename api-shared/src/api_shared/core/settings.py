@@ -17,15 +17,15 @@ class Environment(StrEnum):
     """Possible environments."""
 
     DEV = "dev"
-    TEST = "test"
     PROD = "prod"
+    TEST = "test"
 
 
 class OLTPLogMethod(StrEnum):
-    NONE = "none"
-    MANUAL = "manual"
-    LOGFIRE = "logfire"
     LANGFUSE = "langfuse"
+    LOGFIRE = "logfire"
+    MANUAL = "manual"
+    NONE = "none"
 
 
 class SharedBaseSettings(BaseSettings):
