@@ -13,7 +13,7 @@ maintainers = [
 ]
 
 keywords = [
-    "api-template-worker"
+    "fastapi-template-worker"
 ]
 
 classifiers = [

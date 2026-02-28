@@ -5,7 +5,7 @@ This document explains the structure of the API template project.
 ## Directory Structure
 
 ```
-api-template/
+fastapi-template/
 ├── app/                      # Main application package
 │   ├── api/                  # API endpoints and routers
 │   │   └── v1/              # API version 1

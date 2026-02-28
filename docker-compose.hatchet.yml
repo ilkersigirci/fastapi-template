@@ -1,8 +1,8 @@
-name: api-template
+name: fastapi-template
 
 networks:
-  api-template-network:
-    name: api-template-network
+  fastapi-template-network:
+    name: fastapi-template-network
     driver: bridge
     ipam:
       config:
@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
     networks:
-      - api-template-network
+      - fastapi-template-network
     expose:
       - "5432"
     volumes:
@@ -47,7 +47,7 @@ services:
       - programming
       - hatchet
     networks:
-      - api-template-network
+      - fastapi-template-network
     expose:
       - "8888" # HTTP UI
       - "7077" # gRPC API

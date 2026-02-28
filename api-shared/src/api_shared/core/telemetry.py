@@ -63,7 +63,7 @@ def setup_opentelemetry_worker(settings):
 
     resource = Resource(
         attributes={
-            SERVICE_NAME: getattr(settings, "PROJECT_NAME", "api-template-worker"),
+            SERVICE_NAME: getattr(settings, "PROJECT_NAME", "fastapi-template-worker"),
             TELEMETRY_SDK_LANGUAGE: "python",
             DEPLOYMENT_ENVIRONMENT: settings.ENVIRONMENT,
         },
